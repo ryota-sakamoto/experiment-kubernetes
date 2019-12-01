@@ -6,13 +6,28 @@ quay
 
 ## memo
 
+`$QUAY_DEVEL_HOME`は`quay`をcloneしたディレクトリ
+
 ```
 $ docker images
 REPOSITORY            TAG                 IMAGE ID            CREATED              SIZE
 quay                  devel               8b238bb44e43        About a minute ago   1.91GB
 ```
 
-`$QUAY_DEVEL_HOME`は`quay`をcloneしたディレクトリ
+下記のコマンドで`https://localhost:8443/`にアクセス可能  
+BASICは`quayconfig`/`password`
+
+```
+$ docker run -it --rm --name quay \
+      -v $QUAY_DEVEL_HOME/quay-config:/conf/stack \
+      -v $QUAY_DEVEL_HOME/quay-storage:/datastorage \
+      -v $QUAY_DEVEL_HOME/quay:$QUAY_DEVEL_HOME/quay \
+      -p 8080:8080 \
+      -p 8443:8443 \
+      -p 9092:9092 \
+      -e QUAY_DEVEL_HOME=$QUAY_DEVEL_HOME \
+      -e ENCRYPTED_ROBOT_TOKEN_MIGRATION_PHASE=new-installation quay:devel config password
+```
 
 ```
 $ docker run --rm --name quay \
