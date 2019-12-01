@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-app
+spec:
+  selector:
+    matchLabels:
+      app: sample-app
+  template:
+    metadata:
+      labels:
+        app: sample-app
+    spec:
+      containers:
+        - name: docker-demo
+          image: ehazlett/docker-demo
+          ports:
+            - containerPort: 8080
+          env:
+            - name: TITLE
+              value: "docker-demo"
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-app-svc
+spec:
+  selector:
+    app: sample-app
+  ports:
+  - port: 8080
+    targetPort: 8080
