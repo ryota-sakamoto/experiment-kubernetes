@@ -1,8 +1,6 @@
 Contour
 ===
 
-## Ingress by Contour
-
 [Contour](https://github.com/projectcontour/contour)は`Envoy`を使った`Ingress Controller`である  
 `example`では[03-envoy.yaml#L50](https://github.com/projectcontour/contour/blob/master/examples/contour/03-envoy.yaml#L50)にて`DaemonSet`でポートバインドしているので80で疎通可能である
 
@@ -39,14 +37,14 @@ job.batch/contour-certgen   1/1           11s        4m56s
 
 ```
 
-#### usage
+## usage
 
 https://projectcontour.io/docs/v1.0.0/httpproxy/
 
 `HTTPProxy`か`Ingress`を使うことができる  
 `HTTPProxy`は`Ingress API`の拡張をしていて`Ingress`における問題点の解決をしようとしている
 
-#### HTTPProxy
+### HTTPProxy
 
 `v1.0.0`にて`IngressRoute`は非推奨になり、`HTTPProxy`を使うようにとされている  
 https://github.com/projectcontour/contour/releases/tag/v1.0.0
@@ -67,7 +65,7 @@ server: envoy
 transfer-encoding: chunked
 ```
 
-#### Ingress
+### Ingress
 
 普通の`kind: Ingress`を使うこともできる
 
