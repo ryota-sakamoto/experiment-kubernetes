@@ -30,7 +30,7 @@ $ docker run -it --rm --name quay \
 ```
 
 1. アクセスするとDBの情報を入力することになる、localhostは不可
-2. 進めると下記のエラー発生
+2. 進めると下記のエラー発生、これはDBの文字コードを`utfmd4`にしていたから`latin1`にしたら通った
 
 ![](image.png)
 
