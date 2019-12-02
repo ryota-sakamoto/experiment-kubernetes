@@ -29,6 +29,11 @@ $ docker run -it --rm --name quay \
       -e ENCRYPTED_ROBOT_TOKEN_MIGRATION_PHASE=new-installation quay:devel config password
 ```
 
+1. アクセスするとDBの情報を入力することになる、localhostは不可
+2. 進めると下記のエラー発生
+
+![](image.png)
+
 ```
 $ docker run --rm --name quay \
       -v $QUAY_DEVEL_HOME/quay-config:/conf/stack \
