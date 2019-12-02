@@ -34,6 +34,9 @@ $ docker run -it --rm --name quay \
 
 ![](image.png)
 
+3. DBのマイグレーション完了後画面
+![image](https://user-images.githubusercontent.com/18019529/69979616-8c006c80-1526-11ea-8322-601c26c7e726.png)
+
 ```
 $ docker run --rm --name quay \
       -v $QUAY_DEVEL_HOME/quay-config:/conf/stack \
