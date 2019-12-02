@@ -37,6 +37,13 @@ $ docker run -it --rm --name quay \
 3. DBのマイグレーション完了後画面
 ![image](https://user-images.githubusercontent.com/18019529/69979616-8c006c80-1526-11ea-8322-601c26c7e726.png)
 
+4. Redisが必要
+![image](https://user-images.githubusercontent.com/18019529/69979910-18129400-1527-11ea-8097-ea58b0e1b173.png)
+
+5. メモ
+![image](https://user-images.githubusercontent.com/18019529/69979958-2eb8eb00-1527-11ea-802f-36fdaf6d0538.png)
+![image](https://user-images.githubusercontent.com/18019529/69980017-4abc8c80-1527-11ea-80d6-edf8b41fec84.png)
+
 ```
 $ docker run --rm --name quay \
       -v $QUAY_DEVEL_HOME/quay-config:/conf/stack \
