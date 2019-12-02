@@ -4,6 +4,9 @@ quay
 [quay](https://github.com/quay/quay)はDocker Registryである  
 最近OSSになった
 
+[Deploy Red Hat Quay - Basic](https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_-_basic/index)にデプロイする手順が乗っていたことに気づいたので、`docker-compose`で試す  
+以下はメモ
+
 ## memo
 
 `$QUAY_DEVEL_HOME`は`quay`をcloneしたディレクトリ
@@ -43,6 +46,10 @@ $ docker run -it --rm --name quay \
 5. メモ
 ![image](https://user-images.githubusercontent.com/18019529/69979958-2eb8eb00-1527-11ea-802f-36fdaf6d0538.png)
 ![image](https://user-images.githubusercontent.com/18019529/69980017-4abc8c80-1527-11ea-80d6-edf8b41fec84.png)
+
+6. config後に下記コマンド実行するといけるはずだけどいけない
+
+何もconfigを作らずに動かすとエラー出る
 
 ```
 $ docker run --rm --name quay \
