@@ -1,0 +1,12 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: argocd-httpproxy
+  namespace: argocd
+spec:
+  virtualhost:
+    fqdn: argocd.sakamo-dev.test
+  routes:
+    - services:
+        - name: argocd-server
+          port: 80
